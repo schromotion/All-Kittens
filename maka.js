@@ -95,38 +95,14 @@ var theKittens = {"kitten": [
 };
 
 function makanow(theKittens){
-	if (makaTesting){
-		console.log('maka processing blacklist is '+blacklist);
-	}
-
 	// called on page load. Searches all img alt text and srcs for the strings in blacklist, replaces with kittens
 	var pagepics=document.getElementsByTagName("img"), i=0, img;	
 	while (img = pagepics[i++])
 	{	
-		
-		if (img.hasAttribute('makareplaced')){
-			// already replaced	
-		}
-		else {
-			// not yet replaced
-			var alttext = String(img.alt).toLowerCase();
-			var imgsrc = String(img.src).toLowerCase();
-			
-			if (img.parentElement.nodeName != 'BODY'){
-				// check parent innerHTML for blackilist
-				var parenttag = img.parentElement.innerHTML.toLowerCase();
-			}
-			else {
-				// prevent parse of entire doc
-				var parenttag = '';
-			};
 			
 			var imgwidth = img.clientWidth;
 			var imgheight = img.clientHeight;
 	
-			blacklist.forEach(function(blist) {	
-				if ((alttext.indexOf(blist) != -1) || (imgsrc.indexOf(blist) != -1) || (parenttag.indexOf(blist) != -1)){
-					
 					// append old src
 					img.setAttribute("makareplaced", img.src);
 					
@@ -170,9 +146,9 @@ function makanow(theKittens){
 						img.alt = 'Photo by '+theKittens.kitten[randk].Credit+'';
 					};
 					makaReplacements++;
-				};
-			});	
-		};				
+				
+			
+						
 	}
 	if (makaTesting){
 		console.log('maka processing complete, replaced '+makaReplacements+' images');
