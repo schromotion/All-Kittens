@@ -4,11 +4,10 @@
 // tomroyal.com
 
 // Modified by KC to replace ALL pictures with kittens
-
+document.addEventListener('DOMContentLoaded', makanow(theKittens), false);
 
 // kitten data!
 // Note - now moved from S3 to local storage
-
 
 var theKittens = {"kitten": [
     {"file": "1.jpg", "Credit": "Crsan", "URL": "http://www.flickr.com/photos/crsan/2571204498/", "type":"0"},
