@@ -3,14 +3,13 @@
 // by Tom Royal 
 // tomroyal.com
 
-/*
 var makaTesting = false; // for debugging only
 
 if (makaTesting){
 	console.log('maka initiated');
 	var makaReplacements = 0;
 }	
-*/
+
 // init blacklist
 
 var blacklist = ["trump", "трамп", "トランプ"]; // thanks to jSanchoDev and akiatoji for translations
@@ -101,62 +100,63 @@ function makanow(theKittens){
 	while (img = pagepics[i++])
 	{	
 			
-	var imgwidth = img.clientWidth;
-	var imgheight = img.clientHeight;
+			var imgwidth = img.clientWidth;
+			var imgheight = img.clientHeight;
 	
-			// append old src
-			img.setAttribute("makareplaced", img.src);
+					// append old src
+					img.setAttribute("makareplaced", img.src);
 					
-			// remove srcsets, forcing browser to the kitten - eg, BBC News
-			if (img.hasAttribute('srcset')){
-				img.removeAttribute('srcset');	
-			};
-			// remove source srcsets if children of same parent <picture> element - eg, the Guardian
-			if (img.parentElement.nodeName == 'PICTURE'){
-				var theparent = img.parentNode;
-				for(var child=theparent.firstChild; child!==null; child=child.nextSibling) {
-						  if (child.nodeName == "SOURCE"){
-							  child.removeAttribute('src');
-							  child.removeAttribute('srcset');
-						  };
-				};
+					// remove srcsets, forcing browser to the kitten - eg, BBC News
+					if (img.hasAttribute('srcset')){
+						img.removeAttribute('srcset');	
+					};
+					// remove source srcsets if children of same parent <picture> element - eg, the Guardian
+					if (img.parentElement.nodeName == 'PICTURE'){
+						var theparent = img.parentNode;
+						for(var child=theparent.firstChild; child!==null; child=child.nextSibling) {
+						    if (child.nodeName == "SOURCE"){
+							    child.removeAttribute('src');
+							    child.removeAttribute('srcset');
+						    };
+						};
 						
-			};
-			// knock out lazyloader data URLs so it doesn't overwrite kittens
-			if (img.hasAttribute('data-src')){
+					};
+					// knock out lazyloader data URLs so it doesn't overwrite kittens
+					if (img.hasAttribute('data-src')){
 						img.removeAttribute('data-src');	
-			};
-			if (img.hasAttribute('data-hi-res-src')){
+					};
+					if (img.hasAttribute('data-hi-res-src')){
 						img.removeAttribute('data-hi-res-src');	
-			};
-			if (img.hasAttribute('data-low-res-src')){
+					};
+					if (img.hasAttribute('data-low-res-src')){
 						img.removeAttribute('data-low-res-src');	
-			};
+					};
 					
-			var randk = Math.floor(Math.random() * 32) + 1
+					var randk = Math.floor(Math.random() * 32) + 1
 					
-			img.src = chrome.runtime.getURL('/kittens/'+theKittens.kitten[randk].file+'');
+					img.src = chrome.runtime.getURL('/kittens/'+theKittens.kitten[randk].file+'');
 					
-			img.width = imgwidth;
-			img.height = imgheight;
+					img.width = imgwidth;
+					img.height = imgheight;
 					
-			if (theKittens.kitten[randk].type == 0){
-				img.alt = 'Photo by '+theKittens.kitten[randk].Credit+' source '+theKittens.kitten[randk].URL+'';
-			}
-			else {
-				img.alt = 'Photo by '+theKittens.kitten[randk].Credit+'';
-			};
-			//makaReplacements++;
+					if (theKittens.kitten[randk].type == 0){
+						img.alt = 'Photo by '+theKittens.kitten[randk].Credit+' source '+theKittens.kitten[randk].URL+'';
+					}
+					else {
+						img.alt = 'Photo by '+theKittens.kitten[randk].Credit+'';
+					};
+					makaReplacements++;
 				
 			
 						
 	}
-	//if (makaTesting){
-	//	console.log('maka processing complete, replaced '+makaReplacements+' images');
-	//}	    
+	if (makaTesting){
+		console.log('maka processing complete, replaced '+makaReplacements+' images');
+	}	    
 };
-/*
+
 // function to replace kittened-images with the original SRCs
+
 function undomakanow(){
 	if (makaTesting){
 		console.log('undoing MAKA');
@@ -189,4 +189,3 @@ chrome.extension.onMessage.addListener(function (message, sender, callback) {
     }
     */
 });
-*/
