@@ -96,6 +96,6 @@ function undoleonow(){
 chrome.extension.onMessage.addListener(function (message, sender, callback) {
     if (message.functiontoInvoke == "undoLEO") {
 	    // undo function called
-        undomakanow();
+        undoleonow();
     };
 });
