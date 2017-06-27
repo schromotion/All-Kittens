@@ -11,12 +11,12 @@
     "storage",
     "contextMenus"
   ],
-  "icons": { "48": "maka48.png",
-          "128": "maka128.png" },
+  "icons": { "48": "lion48.png",
+          "128": "lion128.png" },
   "browser_action": {
           "default_icon": {
-	           "48": "maka48.png",
-			   "128": "maka128.png"
+	           "48": "lion48.png",
+			   "128": "lion128.png"
           },
           "default_title": "#MAKA",
           "default_popup": "makaoptions.html"
