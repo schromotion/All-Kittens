@@ -6,7 +6,6 @@
   "version": "1.2.1",
 
   "permissions": [
-    "http://www.teaandkittens.co.uk/",
     "storage",
     "contextMenus"
   ],
@@ -17,7 +16,7 @@
 	           "48": "lion48.png",
 			   "128": "lion128.png"
           },
-          "default_title": "#MAKA",
+          "default_title": "#MAKA"
         },
 
   "background": {
