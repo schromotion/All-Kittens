@@ -1,14 +1,18 @@
-# Make-America-Kittens-Again
+# All Leo All Day
 
-This is the code for my Chrome extension:
+Practice manipulating web images with a chrome extension. 
 
-https://chrome.google.com/webstore/detail/make-america-kittens-agai/klchnmggepghlcolikgaekpibclpmgcm
+Changes every picture on a page to a picture of my buddy Leo. 
 
-.. that replaces images of Donald Trump with kittens.
+Example:
 
-Please feel free to copy / edit / reuse the code in any way you like, but please do not use my hosted kitten images - I have to pay the S3 bill each month ;) 
+![alt text](https://raw.githubusercontent.com/schromotion/All-Leos/master/before_example.JPG "Before")
 
-To use your own images, simply edit line 60 of maka.js. Thanks.
+![alt text](https://raw.githubusercontent.com/schromotion/All-Leos/master/after_example.JPG "After")
+
+
+------
+based on code from 
 
 @tomroyal
 tomroyal.com
