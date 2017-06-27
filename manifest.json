@@ -19,10 +19,6 @@
           "default_title": "LEO"
         },
 
-  "background": {
-    "scripts": ["setmakamenu.js"]
-  },
-
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
