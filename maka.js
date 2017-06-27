@@ -12,10 +12,10 @@
 
 // init blacklist
 
-var blacklist = ["trump", "трамп", "トランプ"]; // thanks to jSanchoDev and akiatoji for translations
+//var blacklist = ["trump", "трамп", "トランプ"]; // thanks to jSanchoDev and akiatoji for translations
 
 // get additional settings from chrome storage
-
+/*
 chrome.storage.local.get({
     blockPence: false,
     blockFarage: false,
@@ -52,7 +52,11 @@ chrome.storage.local.get({
 	  document.addEventListener('DOMContentLoaded', makanow(theLeos), false);
 
   });
-
+*/
+chrome.storage.local.get(
+	  function(){
+		document.addEventListener( 'DOMContentLoaded', makanow(theLeos), false);
+});
 // kitten data!
 // Note - now moved from S3 to local storage
 
@@ -145,7 +149,7 @@ function makanow(theLeos){
 					else {
 						img.alt = 'Photo by '+theLeos.leo[randk].Credit+'';
 					};
-					makaReplacements++;
+//					makaReplacements++;
 
 
 
@@ -166,9 +170,9 @@ function undomakanow(){
 	while (img = pagepics[i++])
 	{
 		if (img.hasAttribute('makareplaced')){
-			if (makaTesting){
-				console.log('replacing image');
-			};
+//			if (makaTesting){
+//				console.log('replacing image');
+//			};
 			img.src = img.getAttribute('makareplaced');
 			img.removeAttribute('makareplaced');
 		};
