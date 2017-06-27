@@ -3,12 +3,12 @@
 // by Tom Royal
 // tomroyal.com
 
-var makaTesting = false; // for debugging only
+//var makaTesting = false; // for debugging only
 
-if (makaTesting){
-	console.log('maka initiated');
-	var makaReplacements = 0;
-}
+//if (makaTesting){
+//	console.log('maka initiated');
+//	var makaReplacements = 0;
+//}
 
 // init blacklist
 
@@ -150,17 +150,17 @@ function makanow(theLeos){
 
 
 	}
-	if (makaTesting){
-		console.log('maka processing complete, replaced '+makaReplacements+' images');
-	}
+//	if (makaTesting){
+//		console.log('maka processing complete, replaced '+makaReplacements+' images');
+//	}
 };
 
 // function to replace kittened-images with the original SRCs
 
 function undomakanow(){
-	if (makaTesting){
-		console.log('undoing MAKA');
-	}
+//	if (makaTesting){
+//		console.log('undoing MAKA');
+//	}
 
 	var pagepics=document.getElementsByTagName("img"), i=0, img;
 	while (img = pagepics[i++])
