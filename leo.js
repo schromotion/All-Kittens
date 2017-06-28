@@ -26,7 +26,7 @@ var theLeos = {"leo": [
 };
 
 function leonow(theLeos){
-	// called on page load. 
+	// called on page load.
 	var pagepics=document.getElementsByTagName("img"), i=0, img;
 	while (img = pagepics[i++])
 	{
@@ -88,14 +88,28 @@ function undoleonow(){
 			img.removeAttribute('leoreplaced');
 		};
 	};
-
 }
+
+var redoCounter = 1;
+
+chrome.browserAction.onClicked.addListener(function(tab){
+	redoCounter++;
+
+	if (redoCounter%2 == 0) {
+		undoleonow();
+	}
+  else {
+		leonow();
+	};
+});
+
+
 
 // listener for context menu click invoking the above
 
-chrome.extension.onMessage.addListener(function (message, sender, callback) {
-    if (message.functiontoInvoke == "undoLEO") {
+//chrome.extension.onMessage.addListener(function (message, sender, callback) {
+//    if (message.functiontoInvoke == "undoLEO") {
 	    // undo function called
-        undoleonow();
-    };
-});
+//        undoleonow();
+//    };
+//});

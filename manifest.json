@@ -4,9 +4,13 @@
   "name": "All Leo All Day",
   "description": "Replaces images with my buddy Leo, because he's the man.",
   "version": "0.0.1",
+  "background": {
+    "scripts" : ["leo.js"]
+  },
 
   "permissions": [
     "storage",
+    "activeTab",
     "contextMenus"
   ],
   "icons": { "48": "lion48.png",
@@ -22,7 +26,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["maka.js"]
+      "js": ["leo.js"]
     }
   ],
   "web_accessible_resources": [
