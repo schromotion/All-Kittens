@@ -3,7 +3,7 @@
 //		document.addEventListener( 'DOMContentLoaded', leonow(theLeos), false);
 //});
 
-var changePics = false;
+//var changePics = false;
 
 var theLeos = {"leo": [
  {"file": "1.jpg", "Credit": "Leo", "URL": "http://www.leo.org", "type":"0"},
@@ -27,8 +27,7 @@ var theLeos = {"leo": [
 };
 
 function leonow(theLeos){
-	// called on page load.
-	changePics = true;
+//	changePics = true;
 	var pagepics=document.getElementsByTagName("img"), i=0, img;
 	while (img = pagepics[i++])
 	{
@@ -82,7 +81,7 @@ function leonow(theLeos){
 };
 
 function undoleonow(){
-	changePics = false;
+//	changePics = false;
 	var pagepics=document.getElementsByTagName("img"), i=0, img;
 	while (img = pagepics[i++])
 	{
@@ -93,13 +92,14 @@ function undoleonow(){
 	};
 }
 
-
-if (changePics) {
-	undoleonow();
-}
-else {
-	leonow(theLeos);
-};
+chrome.extension.onMessage.addListener(function (message, sender, callback) {
+	if (message.functiontoInvoke == "changePics") {
+		leonow(theLeos);
+	}
+	else {
+		undoleonow();
+	};
+});
 
 
 
