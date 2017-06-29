@@ -5,7 +5,7 @@
   "description": "Replaces images with my buddy Leo, because he's the man.",
   "version": "0.0.1",
   "background": {
-    "scripts" : ["background.js"]
+    "scripts" : ["runLeos.js"]
   },
 
   "permissions": [
