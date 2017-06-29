@@ -92,7 +92,7 @@ function undoleonow(){
 	};
 }
 
-chrome.browserAction.onClicked.addListener(function() {
+chrome.browserAction.onClicked.addListener(function(tab) {
 	if (changePics) {
 		leonow(theLeos);
 	}
